@@ -1,1 +1,5 @@
+export TARGET_DEVICE_ALT="sky"
+export OF_MAINTAINER="SheshuVadrevu"
+export FOX_AB_DEVICE=1
+export OF_FLASHLIGHT_ENABLE := 0
 export ALLOW_MISSING_DEPENDENCIES=true

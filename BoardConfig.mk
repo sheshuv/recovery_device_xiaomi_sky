@@ -145,7 +145,7 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TW_THEME := portrait_hdpi
 TW_BACKUP_EXCLUSIONS := /data/fonts/files
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone34/temp"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_DEFAULT_BRIGHTNESS := 420
 TW_MAX_BRIGHTNESS := 420
@@ -156,7 +156,7 @@ TW_EXTRA_LANGUAGES := true
 TW_FRAMERATE := 120
 TW_INCLUDE_CRYPTO := true
 TW_NO_EXFAT_FUSE := true
-TW_NO_HAPTICS := false
+TW_NO_HAPTICS := true
 #TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_RESETPROP := true
@@ -176,6 +176,16 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+
+#TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
+#
+#TARGET_RECOVERY_DEVICE_MODULES += libexpat
+#RECOVERY_LIBRARY_SOURCE_FILES += \
+#     $(TARGET_OUT_SHARED_LIBRARIES)/libexpat.so
+
+
 
 # TWRP Debug Flags
 #TWRP_EVENT_LOGGING := true
@@ -209,6 +219,4 @@ ifneq ($(wildcard device/common/version-info/.),)
         CUSTOM_TWRP_VERSION := $(shell date +%Y%m%d)-01
     endif
 endif
-#
-# end local build flags
-#
+
