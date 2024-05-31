@@ -18,7 +18,7 @@
 #
 
 # Define hardware platform
-PRODUCT_PLATFORM := taro
+PRODUCT_PLATFORM := parrot
 
 #
 #
