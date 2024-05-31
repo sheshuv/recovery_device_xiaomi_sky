@@ -24,3 +24,8 @@ mkdir /tmp/install/bin
 
 exit 0
 #
+
+mount /vendor_dlkm
+
+rmmod goodix_core && insmod /vendor_dlkm/lib/modules/goodix_core.ko
+
